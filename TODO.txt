@@ -1,0 +1,9 @@
+Remove all TODOs
+Develop usage paths
+Test usage paths
+
+Embedded functionalities:
+buzzer
+hw_clock
+button
+light_control
