@@ -1,6 +1,6 @@
 #include "app.hpp"
 
-#include "../states/state.hpp"
+#include "../enums/digit_groups.hpp"
 #include "../states/alarm.hpp"
 #include "../states/init.hpp"
 #include "../states/light.hpp"
@@ -10,31 +10,23 @@
 #include "../states/set_clock.hpp"
 #include "../states/set_light.hpp"
 #include "../states/snooze.hpp"
+#include "../states/state.hpp"
 
-#include "../enums/digit_groups.hpp"
-
-App::App(
-    Blinker* blinker,
-    Button* buttons,
-    Buzzer* buzzer,
-    Config* config,
-    Display* display,
-    HwClock* hw_clock,
-    LightControl* light_control,
-    StateList* state_list) :
-    blinker(blinker),
-    buttons(buttons),
-    buzzer(buzzer),
-    config(config),
-    display(display),
-    hw_clock(hw_clock),
-    light_control(light_control),
-    state_list(state_list) {
-    clock_manager = ClockManager(hw_clock, *config);
-    state = States::INIT;
-    stateobj = state_list->init;
+App::App(Blinker* blinker, Button* buttons, Buzzer* buzzer, Config* config,
+         Display* display, HwClock* hw_clock, LightControl* light_control,
+         StateList* state_list)
+    : blinker(blinker),
+      buttons(buttons),
+      buzzer(buzzer),
+      config(config),
+      display(display),
+      hw_clock(hw_clock),
+      light_control(light_control),
+      state_list(state_list) {
+  clock_manager = ClockManager(hw_clock, *config);
+  state = States::INIT;
+  stateobj = state_list->init;
 }
-
 
 void App::react_to_buttons() {
   active_button = buttons->get_button_action();
@@ -54,9 +46,7 @@ void App::display_hw_time() {
   display->set_clock(clock_manager.hw_clock_buffer);
 }
 
-bool App::update_clock(
-    SwClock *clock,
-    bool write_to_hw_clock) {
+bool App::update_clock(SwClock* clock, bool write_to_hw_clock) {
   bool done = false;
   display->blinking_digits = clock->get_updating_digit_group();
   switch (active_button) {

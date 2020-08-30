@@ -7,10 +7,11 @@
 /**
  * Interface for the debugger
  */
-class DebuggerArduino: public Debugger {
+class DebuggerArduino : public Debugger {
  public:
   DebuggerArduino();
   virtual void show_debug_messages(const App& app);
+
  private:
   // TODO(Sönke): init via constexpr
   char copy_of_effective_digits[DISPLAY_LENGTH] = "    ";

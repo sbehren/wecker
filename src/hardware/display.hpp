@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../controller/config.hpp"
 #include "../clock/sw_clock.hpp"
+#include "../controller/config.hpp"
 
 #define DISPLAY_LENGTH 5
 

@@ -4,7 +4,7 @@
 #include "set_alarm.hpp"
 #include "state.hpp"
 
-Alarm::Alarm(const char* name): StateObject(name) {}
+Alarm::Alarm(const char* name) : StateObject(name) {}
 
 StateObject* Alarm::handle(App* app) {
   app->display_hw_time();

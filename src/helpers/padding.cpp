@@ -3,14 +3,11 @@
 #include "padding.hpp"
 
 #include <iomanip>
-#include <string>
 #include <sstream>
+#include <string>
 
-std::string pad_string(
-    const std::string& digits,
-    char fill,
-    PadDir pad_direction,
-    int length) {
+std::string pad_string(const std::string& digits, char fill,
+                       PadDir pad_direction, int length) {
   std::stringstream s;
   if (pad_direction == PadDir::RIGHT) {
     s << std::right;

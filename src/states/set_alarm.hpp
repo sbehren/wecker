@@ -4,7 +4,7 @@
 
 class App;
 
-class SetAlarm: public StateObject {
+class SetAlarm : public StateObject {
  public:
   explicit SetAlarm(const char* name);
   StateObject* handle(App* app);

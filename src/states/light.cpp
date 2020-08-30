@@ -1,12 +1,11 @@
 #include "light.hpp"
 
+#include "../enums/buttons.hpp"
 #include "alarm.hpp"
 #include "set_clock.hpp"
 #include "set_light.hpp"
 
-#include "../enums/buttons.hpp"
-
-Light::Light(const char* name): StateObject(name) {}
+Light::Light(const char* name) : StateObject(name) {}
 
 StateObject* Light::handle(App* app) {
   switch (app->active_button) {

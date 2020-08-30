@@ -4,7 +4,7 @@
 
 class App;
 
-class Light: public StateObject {
+class Light : public StateObject {
  public:
   explicit Light(const char* name);
   StateObject* handle(App* app);

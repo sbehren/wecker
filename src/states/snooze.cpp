@@ -2,7 +2,7 @@
 
 #include "ring.hpp"
 
-Snooze::Snooze(const char* name): StateObject(name) {}
+Snooze::Snooze(const char* name) : StateObject(name) {}
 
 StateObject* Snooze::handle(App* app) {
   app->display_hw_time();

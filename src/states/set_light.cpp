@@ -2,7 +2,7 @@
 
 #include "light.hpp"
 
-SetLight::SetLight(const char* name): StateObject(name) {}
+SetLight::SetLight(const char* name) : StateObject(name) {}
 
 StateObject* SetLight::handle(App* app) {
   app->display->set_integer(app->light_control->get_light_level_percentage());

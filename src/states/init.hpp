@@ -4,7 +4,7 @@
 
 class App;
 
-class Init: public StateObject {
+class Init : public StateObject {
  public:
   explicit Init(const char* name);
   StateObject* handle(App* app);

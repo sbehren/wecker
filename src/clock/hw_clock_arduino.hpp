@@ -2,7 +2,7 @@
 
 #include "hw_clock.hpp"
 
-class HwClockArduino: public HwClock {
+class HwClockArduino : public HwClock {
  public:
   HwClockArduino();
   virtual void set_from_sw(SwClock clock);

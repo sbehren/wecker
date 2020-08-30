@@ -1,10 +1,9 @@
 #include "ring.hpp"
 
+#include "../enums/buttons.hpp"
 #include "snooze.hpp"
 
-#include "../enums/buttons.hpp"
-
-Ring::Ring(const char* name): StateObject(name) {}
+Ring::Ring(const char* name) : StateObject(name) {}
 
 StateObject* Ring::handle(App* app) {
   StateObject* next_state = this;

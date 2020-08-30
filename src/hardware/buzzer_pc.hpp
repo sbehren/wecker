@@ -2,7 +2,7 @@
 
 #include "buzzer.hpp"
 
-class BuzzerPc: public Buzzer {
+class BuzzerPc : public Buzzer {
  public:
   BuzzerPc();
   virtual void start_buzzing();

@@ -3,15 +3,9 @@
 
 #include "Arduino.h"
 
-BlinkerArduino::BlinkerArduino() {
-  pinMode(LED_BUILTIN, OUTPUT);
-}
+BlinkerArduino::BlinkerArduino() { pinMode(LED_BUILTIN, OUTPUT); }
 
-void BlinkerArduino::start_blinking() {
-  digitalWrite(LED_BUILTIN, HIGH);
-}
+void BlinkerArduino::start_blinking() { digitalWrite(LED_BUILTIN, HIGH); }
 
-void BlinkerArduino::stop_blinking() {
-  digitalWrite(LED_BUILTIN, LOW);
-}
+void BlinkerArduino::stop_blinking() { digitalWrite(LED_BUILTIN, LOW); }
 #endif

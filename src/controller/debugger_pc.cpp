@@ -24,30 +24,37 @@ DebuggerPc::DebuggerPc(int argc, char** arg) {
   }
 }
 
-bool DebuggerPc::get_use_mockup_clock() {
-  return use_mockup_clock;
-}
+bool DebuggerPc::get_use_mockup_clock() { return use_mockup_clock; }
 
 void DebuggerPc::show_debug_messages(const App& app) {
   std::string state_str;
   switch (app.state) {
-    case States::INIT:      state_str = "INIT     ";
+    case States::INIT:
+      state_str = "INIT     ";
       break;
-    case States::SET_ALARM: state_str = "SET_ALARM";
+    case States::SET_ALARM:
+      state_str = "SET_ALARM";
       break;
-    case States::ALARM:     state_str = "ALARM    ";
+    case States::ALARM:
+      state_str = "ALARM    ";
       break;
-    case States::RING:      state_str = "RING     ";
+    case States::RING:
+      state_str = "RING     ";
       break;
-    case States::OFF:       state_str = "OFF      ";
+    case States::OFF:
+      state_str = "OFF      ";
       break;
-    case States::LIGHT:     state_str = "LIGHT    ";
+    case States::LIGHT:
+      state_str = "LIGHT    ";
       break;
-    case States::SNOOZE:    state_str = "SNOOZE   ";
+    case States::SNOOZE:
+      state_str = "SNOOZE   ";
       break;
-    case States::SET_LIGHT: state_str = "SET_LIGHT";
+    case States::SET_LIGHT:
+      state_str = "SET_LIGHT";
       break;
-    case States::SET_CLOCK: state_str = "SET_CLOCK";
+    case States::SET_CLOCK:
+      state_str = "SET_CLOCK";
       break;
   }
 
@@ -65,7 +72,8 @@ void DebuggerPc::show_debug_messages(const App& app) {
     case Buttons::MINUS:
       button_str = "-";
       break;
-    case Buttons::SNOOZE: button_str = "Z";
+    case Buttons::SNOOZE:
+      button_str = "Z";
       break;
     case Buttons::NONE:
       button_str = " ";
@@ -94,17 +102,16 @@ void DebuggerPc::show_debug_messages(const App& app) {
         std::to_string(app.light_control->get_light_level_percentage());
     std::string light_string = pad_string(light_level, ' ', PadDir::LEFT, 4);
     std::string buzz_string =
-      app.buzzer->is_buzzing() ? "RINGRING" : "        ";
+        app.buzzer->is_buzzing() ? "RINGRING" : "        ";
 
-    std::cout << "\tSTATE: "  << state_str
-    << "\tBUTTON: " << button_str
-    << "\tALARM: " << app.clock_manager.alarm.get_readable_time()
-    << "\tSNOOZE: "
-    << app.clock_manager.get_effective_alarm().get_readable_time()
-    << "\tHW_CL_BUF: " << app.clock_manager.hw_clock_buffer.get_readable_time()
-    << "\tDELTA_T: " << pad_string(time_string, ' ', PadDir::LEFT, 6)
-    << "\tBRIGHT: " << light_string
-    << "\tBUZZ: " << buzz_string;
+    std::cout << "\tSTATE: " << state_str << "\tBUTTON: " << button_str
+              << "\tALARM: " << app.clock_manager.alarm.get_readable_time()
+              << "\tSNOOZE: "
+              << app.clock_manager.get_effective_alarm().get_readable_time()
+              << "\tHW_CL_BUF: "
+              << app.clock_manager.hw_clock_buffer.get_readable_time()
+              << "\tDELTA_T: " << pad_string(time_string, ' ', PadDir::LEFT, 6)
+              << "\tBRIGHT: " << light_string << "\tBUZZ: " << buzz_string;
     // << "\tBLINK: " << app.blinker->is_blinking();
   }
 }

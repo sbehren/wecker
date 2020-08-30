@@ -12,11 +12,11 @@ Display::Display(const Config& config) {
 }
 
 void Display::set_integer(const int& num) {
-  snprintf(digits, display_length+1, "%*d", display_length, num);
+  snprintf(digits, display_length + 1, "%*d", display_length, num);
 }
 
 void Display::set_padded_integer(const int& num) {
-  snprintf(digits, display_length+1, "%0*d", display_length, num);
+  snprintf(digits, display_length + 1, "%0*d", display_length, num);
 }
 
 void Display::set_clock(const SwClock& sw_clock) {
@@ -25,7 +25,7 @@ void Display::set_clock(const SwClock& sw_clock) {
 }
 
 void Display::set_chars(const char* chars) {
-  snprintf(digits, display_length+1, "%*s", display_length, chars);
+  snprintf(digits, display_length + 1, "%*s", display_length, chars);
 }
 
 void Display::draw_digits() {

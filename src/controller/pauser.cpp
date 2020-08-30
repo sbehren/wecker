@@ -20,13 +20,9 @@ void Pauser::reset_pause() {
   pause_medium = false;
 }
 
-void Pauser::enable_one_long_pause() {
-  pause_long = true;
-}
+void Pauser::enable_one_long_pause() { pause_long = true; }
 
-void Pauser::enable_one_medium_pause() {
-  pause_medium = true;
-}
+void Pauser::enable_one_medium_pause() { pause_medium = true; }
 
 void Pauser::wait_milliseconds(int milliseconds) {
   // To refresh the display causes time penalties.
@@ -44,6 +40,4 @@ void Pauser::wait_milliseconds(int milliseconds) {
   }
 }
 
-void Pauser::wait_through_display_refresh() {
-  display->refresh_display();
-}
+void Pauser::wait_through_display_refresh() { display->refresh_display(); }

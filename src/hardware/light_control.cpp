@@ -25,9 +25,7 @@ void LightControl::increase_light_level() {
   set_light_level_fraction(fraction + change_by_fraction);
 }
 
-void LightControl::turn_light_off() {
-  set_light_level_fraction(0.0);
-}
+void LightControl::turn_light_off() { set_light_level_fraction(0.0); }
 
 void LightControl::turn_light_to_last_level_set_by_user() {
   set_light_level_fraction(last_userdefined_fraction);

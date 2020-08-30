@@ -4,7 +4,7 @@
 
 class App;
 
-class SetClock: public StateObject {
+class SetClock : public StateObject {
  public:
   explicit SetClock(const char* name);
   StateObject* handle(App* app);

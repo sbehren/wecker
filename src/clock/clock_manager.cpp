@@ -1,7 +1,7 @@
 #include "clock_manager.hpp"
 
-ClockManager::ClockManager(HwClock* hw_clock, const Config& config):
-    hw_clock(hw_clock) {
+ClockManager::ClockManager(HwClock* hw_clock, const Config& config)
+    : hw_clock(hw_clock) {
   minutes_snooze_interval = config.get_minutes_snooze_interval();
   minutes_lighting_alarm = config.get_minutes_lighting_alarm();
   update_hw_clock_buffer();
@@ -36,7 +36,7 @@ void ClockManager::write_hw_clock_buffer_to_hw_clock() {
 }
 
 void ClockManager::update_hw_clock_buffer() {
-  hw_clock->write_to_sw(& hw_clock_buffer);
+  hw_clock->write_to_sw(&hw_clock_buffer);
 }
 
 double ClockManager::suggest_lighting_in_alarm() const {
