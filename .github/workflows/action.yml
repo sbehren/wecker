@@ -1,13 +1,28 @@
 name: Wecker
 on: push
 jobs:
+  lint:
+    name: Lint with Google's cpplint
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Lint
+      run: |
+        python -m pip install --upgrade pip
+        pip install cpplint
+        python -m cpplint --filter=legal/copyright wecker.cpp {src}/**/*pp
   build-foreign-action:
     name: Compile with arduino-test-compile
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Compile all examples
+    - name: Compile source
       uses: ArminJo/arduino-test-compile@v2
       with:
         debug-compile: true
