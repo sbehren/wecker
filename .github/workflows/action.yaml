@@ -28,7 +28,7 @@ jobs:
         debug-compile: true
         required-libraries: SevSeg
   test-clang-format:
-    name: Test formatting with clang
+    name: Test formatting with clang, foreign action
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,3 +38,10 @@ jobs:
           extensions: 'cpp,hpp,ino'
           clangFormatVersion: 10
           style: Google
+  test-own-clang-format:
+    name: Test formatting with clang
+    runs-on: ubuntu-latest
+      - uses: actions/checkout@v2
+      - run: |
+          shopt -s globstar
+          diff -u <(cat **/*.{cpp,hpp,ino}) <(clang-format -style=Google **/*.{cpp,hpp,ino})
