@@ -27,3 +27,12 @@ jobs:
       with:
         debug-compile: true
         required-libraries: SevSeg
+  test-clang-format:
+    name: Test formatting with clang
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: DoozyX/clang-format-lint-acion@v0.8
+        with:
+          source: '.'
+          extensions: 'cpp, hpp, ino'
