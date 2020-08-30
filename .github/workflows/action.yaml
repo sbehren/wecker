@@ -36,4 +36,5 @@ jobs:
         with:
           source: '.'
           extensions: 'cpp,hpp,ino'
-          clangFormatVersion: 9
+          clangFormatVersion: 10
+          style: Google
