@@ -2,13 +2,10 @@
 
 #include "blinker_pc.hpp"
 
-BlinkerPc::BlinkerPc() {
-}
+BlinkerPc::BlinkerPc() {}
 
-void BlinkerPc::start_blinking() {
-}
+void BlinkerPc::start_blinking() {}
 
-void BlinkerPc::stop_blinking() {
-}
+void BlinkerPc::stop_blinking() {}
 
 #endif

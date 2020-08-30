@@ -5,7 +5,7 @@
 /**
  * Interface to control the hardware light
  */
-class LightControlArduino: public LightControl {
+class LightControlArduino : public LightControl {
  public:
   explicit LightControlArduino(const Config& config);
 

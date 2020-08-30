@@ -1,7 +1,7 @@
 #pragma once
 
-#include "config.hpp"
 #include "../hardware/display.hpp"
+#include "config.hpp"
 
 class Pauser {
  public:
@@ -10,6 +10,7 @@ class Pauser {
   void reset_pause();
   void enable_one_long_pause();
   void enable_one_medium_pause();
+
  protected:
   void wait_milliseconds(int milliseconds);
   void wait_through_display_refresh();

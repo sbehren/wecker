@@ -1,43 +1,33 @@
 #pragma once
 
-#include "config.hpp"
-#include "messenger.hpp"
-#include "pauser.hpp"
-
 #include "../clock/clock_manager.hpp"
 #include "../clock/hw_clock.hpp"
 #include "../clock/sw_clock.hpp"
-
+#include "../enums/states.hpp"
 #include "../hardware/blinker.hpp"
 #include "../hardware/button.hpp"
 #include "../hardware/buzzer.hpp"
 #include "../hardware/display.hpp"
 #include "../hardware/light_control.hpp"
-
 #include "../states/state_list.hpp"
-
-#include "../enums/states.hpp"
+#include "config.hpp"
+#include "messenger.hpp"
+#include "pauser.hpp"
 
 class StateObject;
 
 class App {
  public:
-  App(
-    Blinker* binker,
-    Button* buttons,
-    Buzzer* buzzer,
-    Config* config,
-    Display* display,
-    HwClock* hw_clock,
-    LightControl* light,
-    StateList* state_list);
+  App(Blinker* binker, Button* buttons, Buzzer* buzzer, Config* config,
+      Display* display, HwClock* hw_clock, LightControl* light,
+      StateList* state_list);
 
   void display_hw_time();
   StateObject* enter_state_off();
   void react_to_buttons();
   void set_state(StateObject* new_state);
   void stop_buzzing();
-  bool update_clock(SwClock *clock, bool write_to_hw_clock);
+  bool update_clock(SwClock* clock, bool write_to_hw_clock);
 
   Blinker* blinker;
   Button* buttons;

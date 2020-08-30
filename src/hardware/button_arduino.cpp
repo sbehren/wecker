@@ -1,8 +1,8 @@
 #ifndef PC_ONLY
 #include "button_arduino.hpp"
-#include "pins.hpp"
 
 #include "Arduino.h"
+#include "pins.hpp"
 
 ButtonArduino::ButtonArduino() {
   // PinBinding<Buttons> mode(1, Buttons::MODE);

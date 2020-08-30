@@ -1,12 +1,8 @@
 #include "blinker.hpp"
 
-Blinker::Blinker() {
-  blinking = false;
-}
+Blinker::Blinker() { blinking = false; }
 
-bool Blinker::is_blinking() const {
-  return blinking;
-}
+bool Blinker::is_blinking() const { return blinking; }
 
 void Blinker::toggle_blinking() {
   blinking = !blinking;

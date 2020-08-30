@@ -6,7 +6,7 @@
 
 class ClockManager {
  public:
-  explicit ClockManager(HwClock *hw_clock, const Config& config);
+  explicit ClockManager(HwClock* hw_clock, const Config& config);
 
   void reset_effective_alarm();
 

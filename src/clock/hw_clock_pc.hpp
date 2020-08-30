@@ -2,7 +2,7 @@
 
 #include "hw_clock.hpp"
 
-class HwClockPc: public HwClock {
+class HwClockPc : public HwClock {
  public:
   explicit HwClockPc(bool use_mockup_clock);
   virtual void set_from_sw(SwClock clock);

@@ -1,9 +1,5 @@
 #include "buzzer.hpp"
 
-Buzzer::Buzzer() {
-  buzzing = false;
-}
+Buzzer::Buzzer() { buzzing = false; }
 
-bool Buzzer::is_buzzing() const {
-  return buzzing;
-}
+bool Buzzer::is_buzzing() const { return buzzing; }

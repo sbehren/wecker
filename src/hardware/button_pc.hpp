@@ -5,7 +5,7 @@
 /**
  * Interface to access buttons
  */
-class ButtonPc: public Button {
+class ButtonPc : public Button {
  public:
   ButtonPc();
   ~ButtonPc();

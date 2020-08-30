@@ -3,9 +3,7 @@
 
 #include "Arduino.h"
 
-DebuggerArduino::DebuggerArduino() {
-  Serial.begin(9600);
-}
+DebuggerArduino::DebuggerArduino() { Serial.begin(9600); }
 
 void DebuggerArduino::show_debug_messages(const App& app) {
   // Cheap random condition to avoid compiler warnings

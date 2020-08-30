@@ -2,7 +2,7 @@
 
 #include "light.hpp"
 
-Init::Init(const char* name): StateObject(name) {}
+Init::Init(const char* name) : StateObject(name) {}
 
 StateObject* Init::handle(App* app) {
   app->display->set_chars(app->msg.okay);

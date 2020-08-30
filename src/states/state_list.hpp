@@ -12,16 +12,9 @@ class Snooze;
 
 class StateList {
  public:
-  StateList(
-    Alarm* alarm,
-    Init* init,
-    Light* light,
-    Off* off,
-    Ring* ring,
-    SetAlarm* set_alarm,
-    SetClock* set_clock,
-    SetLight* set_light,
-    Snooze* snooze);
+  StateList(Alarm* alarm, Init* init, Light* light, Off* off, Ring* ring,
+            SetAlarm* set_alarm, SetClock* set_clock, SetLight* set_light,
+            Snooze* snooze);
   Alarm* alarm;
   Init* init;
   Light* light;

@@ -1,10 +1,9 @@
 #include "off.hpp"
 
+#include "../enums/buttons.hpp"
 #include "light.hpp"
 
-#include "../enums/buttons.hpp"
-
-Off::Off(const char* name): StateObject(name) {}
+Off::Off(const char* name) : StateObject(name) {}
 
 StateObject* Off::handle(App* app) {
   app->display_hw_time();

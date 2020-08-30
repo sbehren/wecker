@@ -16,8 +16,6 @@ void DisplayPc::write_effective_digits() {
   std::cout << "\r" << effective_digits;
 }
 
-void DisplayPc::refresh_display() const {
-  usleep(syscall_duration_us);
-}
+void DisplayPc::refresh_display() const { usleep(syscall_duration_us); }
 
 #endif

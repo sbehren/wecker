@@ -5,7 +5,7 @@
 /**
  * Interface to control the hardware light
  */
-class LightControlPc: public LightControl {
+class LightControlPc : public LightControl {
  public:
   explicit LightControlPc(const Config& config);
 

@@ -7,8 +7,8 @@
 
 #include "sw_clock.hpp"
 
-HwClockPc::HwClockPc(bool use_mockup_clock):
-    use_mockup_clock(use_mockup_clock) {
+HwClockPc::HwClockPc(bool use_mockup_clock)
+    : use_mockup_clock(use_mockup_clock) {
   delta_minutes = 0;
 }
 

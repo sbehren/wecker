@@ -2,17 +2,14 @@
 #ifdef PC_ONLY  // Without this guard, arduino-builder includes this file
 
 #include "src/clock/hw_clock_pc.hpp"
-
 #include "src/controller/app.hpp"
-#include "src/controller/debugger_pc.hpp"
 #include "src/controller/config.hpp"
-
+#include "src/controller/debugger_pc.hpp"
 #include "src/hardware/blinker_pc.hpp"
 #include "src/hardware/button_pc.hpp"
 #include "src/hardware/buzzer_pc.hpp"
 #include "src/hardware/display_pc.hpp"
 #include "src/hardware/light_control_pc.hpp"
-
 #include "src/headers.include.hpp"
 
 int main(int argc, char** arg) {
@@ -25,20 +22,13 @@ int main(int argc, char** arg) {
   HwClockPc hw_clock(debugger.get_use_mockup_clock());
   LightControlPc light_control(config);
 
-  #include "src/states.include.hpp"
+#include "src/states.include.hpp"
 
-  App app(
-    &blinker,
-    &buttons,
-    &buzzer,
-    &config,
-    &display,
-    &hw_clock,
-    &light_control,
-    &state_list);
+  App app(&blinker, &buttons, &buzzer, &config, &display, &hw_clock,
+          &light_control, &state_list);
 
   while (true) {
-    #include "src/loop.include.hpp"
+#include "src/loop.include.hpp"
   }
 
   return 0;
