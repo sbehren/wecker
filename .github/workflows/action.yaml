@@ -32,7 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: DoozyX/clang-format-lint-acion@v0.8
+      - uses: DoozyX/clang-format-lint-action@v0.8
         with:
           source: '.'
-          extensions: 'cpp, hpp, ino'
+          extensions: 'cpp,hpp,ino'
+          clangFormatVersion: 9
