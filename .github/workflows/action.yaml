@@ -41,7 +41,9 @@ jobs:
   test-own-clang-format:
     name: Test formatting with clang
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v2
-      - run: |
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Format
+        run: |
           shopt -s globstar
           diff -u <(cat **/*.{cpp,hpp,ino}) <(clang-format -style=Google **/*.{cpp,hpp,ino})
