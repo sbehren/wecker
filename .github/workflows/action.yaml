@@ -1,6 +1,16 @@
 name: Wecker
 on: push
 jobs:
+  format:
+    name: Test formatting with clang
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Format
+        run: |
+          shopt -s globstar
+          diff -u <(cat **/*.{cpp,hpp,ino}) <(clang-format -style=Google **/*.{cpp,hpp,ino})
   lint:
     name: Lint with Google's cpplint
     runs-on: ubuntu-latest
@@ -16,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install cpplint
         python -m cpplint --extensions=cpp,hpp,ino --filter=-legal/copyright wecker.* src/**/*pp
-  build-foreign-action:
+  build-foreign:
     name: Compile with arduino-test-compile
     runs-on: ubuntu-latest
     steps:
@@ -27,24 +37,3 @@ jobs:
       with:
         debug-compile: true
         required-libraries: SevSeg
-  test-clang-format:
-    name: Test formatting with clang, foreign action
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: DoozyX/clang-format-lint-action@v0.8
-        with:
-          source: '.'
-          extensions: 'cpp,hpp,ino'
-          clangFormatVersion: 10
-          style: Google
-  test-own-clang-format:
-    name: Test formatting with clang
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Format
-        run: |
-          shopt -s globstar
-          diff -u <(cat **/*.{cpp,hpp,ino}) <(clang-format -style=Google **/*.{cpp,hpp,ino})
