@@ -24,8 +24,7 @@ int main(int argc, char** arg) {
 
 #include "src/states.include.hpp"
 
-  App app(&blinker, &buttons, &buzzer, &config, &display, &hw_clock,
-          &light_control, &state_list);
+  App app(&blinker, &buttons, &buzzer, &config, &display, &hw_clock, &light_control, &state_list);
 
   while (true) {
 #include "src/loop.include.hpp"
