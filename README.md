@@ -1,5 +1,5 @@
 # Wecker
-https://github.com/sbehren/wecker/workflows/Wecker/badge.svg
+![Wecker status](https://github.com/sbehren/wecker/workflows/Wecker/badge.svg)
 
 ## About
 An embedded C++ embedded Arduino project for building a light alarm clock. The German word *Wecker* means alarm clock.
