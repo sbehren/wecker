@@ -31,7 +31,9 @@ App app(
     &display,
     &hw_clock,
     &light_control,
-    &state_list);
+    &state_list
+asdf spam spam
+);
 
 void setup() {
 }
