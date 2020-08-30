@@ -11,4 +11,4 @@ jobs:
       uses: ArminJo/arduino-test-compile@v2
       with:
         debug-compile: true
-        # required-libraries: nonexistinglibrary
+        required-libraries: SevSeg
