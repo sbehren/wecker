@@ -2,7 +2,7 @@ name: Wecker
 on: push
 jobs:
   format:
-    name: Test formatting with clang
+    name: Format
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,7 +12,7 @@ jobs:
           shopt -s globstar
           diff -u <(cat **/*.{cpp,hpp,ino}) <(clang-format -style=Google **/*.{cpp,hpp,ino})
   lint:
-    name: Lint with Google's cpplint
+    name: Lint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -26,8 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install cpplint
         python -m cpplint --extensions=cpp,hpp,ino --filter=-legal/copyright wecker.* src/**/*pp
-  build-foreign:
-    name: Compile with arduino-test-compile
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
