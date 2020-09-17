@@ -1,6 +1,8 @@
 Remove all TODOs
 Develop usage paths
 Test usage paths
+Draft UML diagrams of components
+Draft finite state machine diagram with graphviz
 
 Embedded functionalities:
 buzzer
