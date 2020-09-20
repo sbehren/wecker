@@ -1,0 +1,18 @@
+digraph wecker {
+  INIT [label="*"];
+  INIT -> LIGHT;
+  LIGHT -> SET_LIGHT;
+  LIGHT -> SET_CLOCK;
+  LIGHT -> ALARM;
+  ALARM -> SET_ALARM;
+  ALARM -> RING;
+  RING -> SNOOZE;
+  RING -> OFF;
+  SNOOZE -> RING;
+  SNOOZE -> OFF;
+  ALARM -> OFF;
+  OFF -> LIGHT;
+  SET_ALARM -> ALARM;
+  SET_CLOCK -> LIGHT;
+  SET_LIGHT -> LIGHT;
+}
