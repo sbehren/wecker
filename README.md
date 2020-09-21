@@ -4,7 +4,7 @@
 ## About
 An embedded C++ embedded Arduino project for building a light alarm clock. The German word *Wecker* means alarm clock.
 
-![State machine](https://github.com/sbehren/wecker/blob/master/info/graph.png)
+![State machine](https://github.com/sbehren/wecker/blob/master/info/graph.svg)
 
 ## Status: Work in progress
 * Not done for Arduino. It compiles for and runs on Arduino but not all embedded components are fully developed yet.

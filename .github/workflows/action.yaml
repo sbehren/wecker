@@ -46,9 +46,4 @@ jobs:
       - name: Compile graph
         run: |
           sudo apt install graphviz
-          dot info/design.dot -Tpng -o graph.png
-      - name: Upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: graph-artifact
-          path: graph.png
+          dot info/design.dot -Tsvg -o graph.png
