@@ -1,6 +1,6 @@
 The following describe ways to control light using the arduino
 
 Transistor
-"LED-Treiber"
+"LED-Treiber" / Leitungstreiber
 Stepper converter
 Level shifter

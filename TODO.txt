@@ -1,11 +1,16 @@
 Remove all TODOs
+Fix static checking errors
 Develop usage paths
 Test usage paths
 Draft UML diagrams of components
 Draft finite state machine diagram with graphviz
+Unit testing with Gmock, Gtest
+Use override for inheritance
 
 Embedded functionalities:
 buzzer
 hw_clock
 button
 light_control
+
+# Use Docker
